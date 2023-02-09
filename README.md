@@ -1,1 +1,1 @@
-evmd-gforce v1.1.0
+evmd-gforce v1.1.1
