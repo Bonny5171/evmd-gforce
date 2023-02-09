@@ -1,4 +1,4 @@
-module github.com/CognyHub/gforce
+module github.com/CognyHub/evmd-gforce
 
 go 1.13
 
