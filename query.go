@@ -12,8 +12,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/CognyHub/evmd-golib/logger"
-
 	uuid "github.com/satori/go.uuid"
 	"github.com/spf13/cast"
 )
@@ -158,7 +156,6 @@ func (f *Force) exec(query, nextRecordsURL string, qType queryType) (results For
 
 	err = json.Unmarshal(body, &res)
 	if err != nil {
-		logger.Debugf("Error on use new json library: %v", err)
 		return
 	}
 	results = res
@@ -196,7 +193,6 @@ func (f *Force) execStream(query, nextRecordsURL, object string, qType queryType
 	if err != nil {
 		return "", "", fmt.Errorf("f.httpGetStream(): %w", err)
 	}
-	logger.Debugf("Exec request to => %v", url)
 
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
