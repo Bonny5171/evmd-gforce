@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/everymind/evmd-golib/logger"
+	"github.com/CognyHub/evmd-golib/logger"
 
 	uuid "github.com/satori/go.uuid"
 	"github.com/spf13/cast"
@@ -29,7 +29,7 @@ const (
 
 const stringNil = ""
 
-//Count func
+// Count func
 func (f *Force) Count(sobject string) (result int, err error) {
 	var res ForceQueryResult
 
@@ -45,7 +45,7 @@ func (f *Force) Count(sobject string) (result int, err error) {
 	return
 }
 
-//GetIDs func
+// GetIDs func
 func (f *Force) GetIDs(sobject string, pkField string, where map[string]interface{}, limit, offset int) (result []string, totalSize int, err error) {
 	query := writeQuery(sobject, []string{pkField}, where, limit, offset)
 
@@ -82,7 +82,7 @@ func (f *Force) GetIDsStream(sobject string, pkField string, where map[string]in
 	return
 }
 
-//Select func
+// Select func
 func (f *Force) Select(sobject string, fields []string, where map[string]interface{}, limit, offset int, customQuery string) (results []ForceRecord, totalSize int, err error) {
 
 	var query string
@@ -104,7 +104,7 @@ func (f *Force) Select(sobject string, fields []string, where map[string]interfa
 	return
 }
 
-//SelectByID func
+// SelectByID func
 func (f *Force) SelectByID(sobject string, fields []string, id string) (result ForceRecord, totalSize int, err error) {
 	r, t, err := f.Select(sobject, fields, map[string]interface{}{"Id": id}, 1, 0, "")
 	if err != nil {
@@ -118,7 +118,7 @@ func (f *Force) SelectByID(sobject string, fields []string, id string) (result F
 	return result, t, err
 }
 
-//Tooling func
+// Tooling func
 func (f *Force) Tooling(sobject string, fields []string, where map[string]interface{}, limit, offset int) (results []ForceRecord, totalSize int, err error) {
 	query := writeQuery(sobject, fields, where, limit, offset)
 

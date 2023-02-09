@@ -1,9 +1,9 @@
-module bitbucket.org/everymind/gforce
+module github.com/CognyHub/gforce
 
 go 1.13
 
 require (
-	bitbucket.org/everymind/evmd-golib v1.14.2
+	github.com/CognyHub/evmd-golib v1.14.2
 	cloud.google.com/go/storage v1.7.0
 	github.com/apex/log v1.1.2
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible

@@ -13,13 +13,12 @@ import (
 	"strings"
 	"time"
 
-	"bitbucket.org/everymind/gforce/keystore"
 	"cloud.google.com/go/storage"
-	"github.com/dgrijalva/jwt-go"
+	"github.com/CognyHub/evmd-gforce/keystore"
 	"google.golang.org/api/option"
 )
 
-//GetServerAuthorization func
+// GetServerAuthorization func
 func GetServerAuthorization(orgID, clientID, userMail, authURL, endpointURL string) (result ForceSession, err error) {
 	token, err := generateNewCertToken(orgID, clientID, authURL, userMail)
 	if err != nil {
